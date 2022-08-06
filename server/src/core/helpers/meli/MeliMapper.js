@@ -6,8 +6,8 @@ class MeliMapper{
         results
     }){
         return {
-            categories: filters[0].values[0].path_from_root.map(c => c.name),  
-            items: results.map(item => this.responseWrapperItemsWrapper(item)),
+            categories: filters[0] ? filters[0].values[0].path_from_root.map(c => c.name) : [],  
+            items: results ? results.map(item => this.responseWrapperItemsWrapper(item)): [],
         };
     }
 

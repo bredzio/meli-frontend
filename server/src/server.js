@@ -2,7 +2,8 @@ import express from 'express';
 import cors  from 'cors';
 import env from './environments/environment.js';
 import itemRoutes from './core/features/items/routes/ItemRoutes.js';
-import {authorMiddleware} from './core/middlewares/AuthorMiddleware.js';
+import { authorMiddleware } from './core/middlewares/AuthorMiddleware.js';
+import { errorMiddleware } from './core/middlewares/ErrorMiddleware.js';
 
 export class Server {
     constructor() {
@@ -17,10 +18,14 @@ export class Server {
         this.app.use(cors());
         this.app.use(express.json());
         this.app.use(authorMiddleware);
+        this.app.use(errorMiddleware);
     }
 
     routes() {
         this.app.use( '/api', itemRoutes);
+        this.app.use('/*', (_, res) => {  
+            return res.send('API MERCADO LIBRE');
+        });
     }
 
     listen() {
