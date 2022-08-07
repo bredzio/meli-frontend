@@ -23,9 +23,11 @@ export class Server {
 
     routes() {
         this.app.use( '/api', itemRoutes);
-        this.app.use('/*', (_, res) => {  
-            return res.send('API MERCADO LIBRE');
-        });
+        this.app.use('/*', (_, res) => res.status(404).json({
+            error: true,
+            message: 'Error: Endpoint not found'
+        }));
+        
     }
 
     listen() {

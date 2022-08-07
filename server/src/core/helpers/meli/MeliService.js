@@ -24,6 +24,51 @@ class MeliService {
             return error;
         }
     }
+
+    async getItemById(id) {
+        try {
+            const url = this.builder.createUrl(this.APIPath, `items/${id}`);
+            const response = await this.http.get(url);
+
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return error;
+        }
+    }
+
+    async getItemByDescription(id) {
+        try {
+            const url = this.builder.createUrl(this.APIPath, `items/${id}/description`);
+            const response = await this.http.get(url);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return error;
+        }
+    }
+    
+    async getCurrencies() {
+        try {
+            const url = this.builder.createUrl(this.APIPath, '/currencies');
+            const response = await this.http.get(url);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return error;
+        }
+    }
+
+    async getCategoryById(category_id) {
+        try {
+            const url = this.builder.createUrl(this.APIPath, `categories/${category_id}`);
+            const response = await this.http.get(url);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return error;
+        }
+    }
 }
 
 export default new MeliService({});

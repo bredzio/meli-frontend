@@ -18,3 +18,28 @@ export const getItemsByQuery = async (req, res = response ) => {
         });
     }
 };
+
+export const getItemById = async (req, res = response ) => {
+    try {
+        const item = await ItemService.getItemById(req.params);
+        const author = res.author;
+
+        if(item.error){
+            return res.status(404).json({
+                error: true,
+                message: item.error.toString()
+            });
+        }
+
+        res.json({
+            author,
+            ...item,
+        });
+
+    } catch (error) {
+        res.status(400).json({
+            error: true,
+            message: error.toString()
+        });
+    }
+};
