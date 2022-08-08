@@ -24,6 +24,9 @@ export const getItemById = async ({id}) => {
     
         const description = descriptionData.plain_text;
         const itemCurrency = currenciesData.filter(c => c.id == itemData.currency_id)[0];
+
+        const category = await MeliService.getCategoryById(itemData.category_id);
+        const category_path = category.path_from_root.map(c => c.name);
         
         if(!itemCurrency){
             throw Error(`Item with id ${id} not found`);
@@ -39,7 +42,12 @@ export const getItemById = async ({id}) => {
             description,
         };
 
-        return ItemModel.ItemsByIdRs(meliItemData);
+        const itemDetail = ItemModel.ItemsByIdRs(meliItemData)
+
+        return {
+            ...itemDetail,
+            category_path
+        }
 
     } catch (error) {
         return {

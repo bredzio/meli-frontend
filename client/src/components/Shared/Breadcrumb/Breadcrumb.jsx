@@ -7,7 +7,7 @@ export const Breadcrumbs = ({ items = [] }) => {
         const classes = active ? 'meli-active' : '';
 
         return (
-            <li className={classes} itemprop="itemListElement" itemtype="http://schema.org/ListItem" itemscope="">
+            <li className={classes} itemProp="itemListElement" itemType="http://schema.org/ListItem" itemScope="" key={i}>
                  <a href="/" onClick={e => e.preventDefault()}>
                     {item}
                 </a>
@@ -16,8 +16,8 @@ export const Breadcrumbs = ({ items = [] }) => {
     });
 
     return (
-        <section class="meli-breadcrumbs">
-            <ol className="meli-breadcrumbs-nav" itemtype="http://schema.org/BreadcrumbList" itemscope="">
+        <section className="meli-breadcrumbs">
+            <ol className="meli-breadcrumbs-nav" itemType="http://schema.org/BreadcrumbList" itemScope="">
                 {list}
             </ol>
         </section>

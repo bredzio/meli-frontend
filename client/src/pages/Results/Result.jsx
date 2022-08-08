@@ -9,7 +9,7 @@ const useQuery = () => {
   return new URLSearchParams(useLocation().search)
 }
 
-const ResultsView = () => {
+const Result = () => {
   const query = useQuery()
   const searchQuery = query.get('search')
   const { data, loading } = useFetchResults(searchQuery)
@@ -27,4 +27,4 @@ const ResultsView = () => {
   )
 }
 
-export default ResultsView
+export default Result
