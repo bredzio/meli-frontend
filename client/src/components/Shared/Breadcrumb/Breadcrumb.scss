@@ -1,0 +1,47 @@
+@import '../../../styles/main.scss';
+
+$breadcrumbs-font-size: $global-font-size-14;
+$breadcrumbs-color: $grey-100;
+$breadcrumbs-margin: $global-margin-small;
+$breadcrumbs-separator-margin: calc($breadcrumbs-margin / 2);
+
+.meli-breadcrumbs-nav{
+    list-style: none;
+    padding-left: 0;
+
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    
+    font-size: $breadcrumbs-font-size;
+    line-height: 1;
+    color: $breadcrumbs-color;
+    margin: $breadcrumbs-margin 0;
+
+    a{
+        color: inherit;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    & > li{
+        flex: none;
+
+        & + li{
+            &:before{
+                content: "\203A";
+                display: inline-block;
+                margin: 0 $breadcrumbs-separator-margin;
+            }
+        }
+
+        &.meli-active{
+            a{
+                font-weight: 700;
+            }
+        }
+    }
+}
