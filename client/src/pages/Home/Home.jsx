@@ -1,7 +1,12 @@
+import SearchNavBar from '../../components/SearchNavBar/SearchNavBar.jsx'
+
 const Home = () => {
+  document.title = 'Mercado libre Argentina - Envíos Gratis en el día'
   return (
     <>
-    <h1>Mercado Libre</h1>
+      <main className="meli-page-home">
+        <SearchNavBar/>
+      </main>
     </>
   )
 }

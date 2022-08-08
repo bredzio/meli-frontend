@@ -1,0 +1,58 @@
+@import '../../styles/main.scss';
+
+$search-navbar-background: $yellow;
+$search-navbar-padding: 10px;
+$search-input-radius: $global-radius;
+$search-input-font-size: $global-input-font-size;
+$search-input-color: $black;
+$search-input-placeholder: $grey-100;
+$search-input-padding: 15px;
+$search-button-size: 36px;
+$search-button-background: $grey-50;
+$search-button-background-hover: darken($search-button-background, 10%);
+
+.meli-search-navbar{
+    background-color: $search-navbar-background;
+    padding: $search-navbar-padding 0;
+}
+
+.meli-search-navbar-form{
+    display: flex;
+}
+
+.meli-search-input{
+    border-top-left-radius: $search-input-radius;
+    border-bottom-left-radius: $search-input-radius;
+    font-size: $search-input-font-size;
+    border: none;
+    width: 100%;
+    padding: calc($search-input-padding / 2) $search-input-padding;
+    color: $search-input-color;
+    flex: 1;
+    box-sizing: border-box;
+
+    &::placeholder{
+        color: $search-input-placeholder;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.meli-search-button{
+    padding: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-top-right-radius: $search-input-radius;
+    border-bottom-right-radius: $search-input-radius;
+    border: none;
+    background: url(../../assets/images/ic_Search.png) $search-button-background center center no-repeat;
+    width: $search-button-size;
+    height: $search-button-size;
+
+    &:hover{
+        background-color: $search-button-background-hover;
+    }
+}

@@ -1,0 +1,41 @@
+$base-bg: #eee;
+$base-font-size: $global-font-size-16;
+$base-font-family: $global-font-family;
+$base-container-width: 980px;
+$base-container-padding: 10px;
+
+body{
+    background-color: $base-bg;
+    font-family: $base-font-family;
+    margin: 0;
+}
+
+html{
+    font-size: $base-font-size;
+    line-height: 1.3;
+}
+
+img{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.meli-container{
+    max-width: $base-container-width;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding-left: $base-container-padding;
+    padding-right: $base-container-padding;
+}
+
+.meli-content-loading{
+    opacity: 0;
+}
