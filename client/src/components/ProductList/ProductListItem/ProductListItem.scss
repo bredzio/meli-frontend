@@ -1,0 +1,99 @@
+@import '../../../styles/main.scss';
+
+$results-item-gap: $global-margin-small;
+$results-item-margin: $global-margin-large;
+$results-item-image-size: 180px;
+$results-item-image-border: 1px solid #eee;
+$results-item-radius: $global-radius;
+$results-item-price-margin: $global-margin-small;
+$results-item-price-font-size: $global-font-size-24;
+$results-item-price-color: $black;
+$results-item-condition-font-size: 12px;
+$results-item-condition-color: $grey-150;
+$results-item-title-font-size: 18px;
+$results-item-title-color: $black;
+
+.meli-results-list-item{
+    position: relative;
+
+    .meli-grid{
+        margin-left: -$results-item-gap;
+
+        & > div{
+            padding-left: $results-item-gap;
+
+            &:nth-child(1){
+                width: auto;
+            }
+            
+            &:nth-child(2){
+                flex: 1;
+            }
+        }
+    }
+
+    img{
+        width: $results-item-image-size * 0.5;
+        height: $results-item-image-size * 0.5;
+        border-radius: $results-item-radius;
+        overflow: hidden;
+        object-fit: contain;
+        border: $results-item-image-border;
+
+        @include breakpoint(sm){
+            width: $results-item-image-size;
+            height: $results-item-image-size;
+        }
+    }
+
+    .meli-item-price{
+        font-size: $results-item-price-font-size;
+        line-height: 1;
+        color: $results-item-price-color;
+
+        sup{
+            font-size: $results-item-price-font-size * 0.4;
+            line-height: 1;
+        }
+    }
+    
+    .meli-item-free-shipping{
+        background: url(../../../assets/images/ic_shipping.png) center center no-repeat;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-left: 12px;
+    }
+
+    .meli-item-condition{
+        font-size: $results-item-condition-font-size;
+        font-weight: 300;
+        color: $results-item-condition-color;
+
+        @include breakpoint(sm){
+            margin-right: $results-item-margin;
+        }
+    }
+
+    .mali-item-price-wrapper{
+        margin-top: $results-item-price-margin;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    h2{
+        margin: $results-item-margin 0 0 0;
+        font-size: $results-item-title-font-size;
+        font-weight: 400;
+        color: $results-item-title-color;
+
+        a{
+            color: inherit;
+            
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

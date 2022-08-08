@@ -1,4 +1,5 @@
 import { ProductListItem } from './ProductListItem/ProductListItem'
+import './ProductList.scss'
 
 export const ProductList = ({ items = [] }) => {
   const list = items.map((i) => {

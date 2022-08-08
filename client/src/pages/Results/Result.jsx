@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 import SearchNavBar from '../../components/SearchNavBar/SearchNavBar.jsx'
 import ProductList from '../../components/ProductList/ProductList.jsx'
 import { useFetchResults } from '../../hooks/useFetch'
+import './Result.scss'
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search)

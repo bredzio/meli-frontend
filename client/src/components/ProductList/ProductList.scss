@@ -1,0 +1,26 @@
+@import '../../styles/main.scss';
+
+$results-list-padding: $global-margin-small;
+$results-list-radius: $global-radius;
+$results-list-border: 2px solid #F7F7F7;
+$results-list-background-color: #fff;
+
+.meli-results-list{
+    border-radius: $results-list-radius;
+    padding: $results-list-padding;
+    background-color: $results-list-background-color;
+    margin: $results-list-padding 0;
+
+    & > .meli-grid{
+        & > div{
+            & + div{
+                margin-top: $results-list-padding;
+
+                & > *{
+                    border-top: $results-list-border;
+                    padding-top: $results-list-padding;
+                }
+            }
+        }
+    }
+}
