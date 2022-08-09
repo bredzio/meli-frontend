@@ -43,7 +43,7 @@ class MeliService {
             const response = await this.http.get(url);
             return response.data;
         } catch (error) {
-            console.error(error);
+            console.warning(error);
             return error;
         }
     }
