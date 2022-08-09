@@ -35,7 +35,7 @@ export class Server {
     }
 
     listen() {
-        this.app.listen(env.PORT, () => console.log(`Server UP running on port ${env.PORT}`));
+        this.app.listen(this.port, () => console.log(`Server UP running on port ${this.port}`));
     }
 
 }

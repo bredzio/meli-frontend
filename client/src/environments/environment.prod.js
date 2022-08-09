@@ -1,5 +1,5 @@
 const environment = {
-  APIBaseURL: 'https://enigmatic-sierra-25848.herokuapp.com'
+  APIBaseURL: 'https://shrouded-cove-81904.herokuapp.com'
 }
 
 export default environment
