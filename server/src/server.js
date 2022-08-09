@@ -22,11 +22,15 @@ export class Server {
     }
 
     routes() {
+        this.app.get('/', (_,res)=> res.status(200).json({
+            message:'Mercado Libre Api Rest'
+        }))
         this.app.use( '/api', itemRoutes);
         this.app.use('/*', (_, res) => res.status(404).json({
             error: true,
             message: 'Error: Endpoint not found'
         }));
+
         
     }
 

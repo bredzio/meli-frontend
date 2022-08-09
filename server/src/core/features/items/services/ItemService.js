@@ -4,9 +4,7 @@ import ItemModel from '../../../features/items/models/ItemModel.js';
 
 export const getItemsByQuery = async ({q}) => {
     try {
-        const result = await MeliService.getSearch({q});
-        return result;
-       
+        return await MeliService.getSearch({q})
     } catch (error) {
         return {
             error: error.toString(),
