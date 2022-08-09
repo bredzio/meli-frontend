@@ -12,16 +12,16 @@ class APIUrlBuilder{
 
     getApiUrl (api){
         if(!api){
-            console.error(`Error: API not found.`)
+            console.error('Error: API not found.');
             return;
         }
 
         switch(api){
-            case 'ML':
-                return environment.APIBaseURL;
-            default:
-                console.error(`Error: ${api} not found.`)
-                return;    
+        case 'ML':
+            return environment.APIBaseURL;
+        default:
+            console.error(`Error: ${api} not found.`);
+            return;    
         }
     }
 

@@ -4,7 +4,7 @@ import ItemModel from '../../../features/items/models/ItemModel.js';
 
 export const getItemsByQuery = async ({q}) => {
     try {
-        return await MeliService.getSearch({q})
+        return await MeliService.getSearch({q});
     } catch (error) {
         return {
             error: error.toString(),
@@ -40,12 +40,12 @@ export const getItemById = async ({id}) => {
             description,
         };
 
-        const itemDetail = ItemModel.ItemsByIdRs(meliItemData)
+        const itemDetail = ItemModel.ItemsByIdRs(meliItemData);
 
         return {
             ...itemDetail,
             category_path
-        }
+        };
 
     } catch (error) {
         return {

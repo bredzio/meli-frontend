@@ -1,4 +1,4 @@
-import  { validationResult } from "express-validator";
+import  { validationResult } from 'express-validator';
 
 export const validationMiddleware = ( req, res, next ) => {
     const errors = validationResult(req);
@@ -11,4 +11,4 @@ export const validationMiddleware = ( req, res, next ) => {
     }
 
     next();
-}
+};
