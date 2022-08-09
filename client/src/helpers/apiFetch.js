@@ -8,10 +8,10 @@ export const getResults = async (search) => {
   return data
 }
 
-export const getItemDetails = async ( id ) => {
+export const getItemDetails = async (id) => {
   const PATH = environment.FRONTBaseURL
-  const url = `${PATH}/api/items/${id}`;
-  const resp = await fetch( url );
-  const data = await resp.json();
-  return data;
+  const url = `${PATH}/api/items/${id}`
+  const resp = await fetch(url)
+  const data = await resp.json()
+  return data
 }
