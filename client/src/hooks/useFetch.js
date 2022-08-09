@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getItemDetails, getResults } from '../helpers/apiFetch'
+import ApiFetchService from '../helpers/ApiFetchService'
 
 export const useFetchResults = (search) => {
   const [state, setState] = useState({
@@ -9,7 +9,7 @@ export const useFetchResults = (search) => {
 
   useEffect(() => {
     (async () => {
-      const data = await getResults(search)
+      const data = await ApiFetchService.getResults(search)
 
       setState({
         data,
@@ -21,25 +21,22 @@ export const useFetchResults = (search) => {
   return state
 }
 
-export const useFetchItemDetails = ( id ) => {
-    
+export const useFetchItemDetails = (id) => {
   const [state, setState] = useState({
-      data: {},
-      loading: true
-  });
+    data: {},
+    loading: true
+  })
 
-  useEffect( () => {
+  useEffect(() => {
+    (async () => {
+      const data = await ApiFetchService.getItemDetails(id)
 
-      (async () => {
-          const data = await getItemDetails( id );
-
-          setState({
-              data: data,
-              loading: false
-          });
-      })();
-
+      setState({
+        data,
+        loading: false
+      })
+    })()
   }, [id])
 
-  return state;
+  return state
 }
