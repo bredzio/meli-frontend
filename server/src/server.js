@@ -8,7 +8,7 @@ import { errorMiddleware } from './core/middlewares/ErrorMiddleware.js';
 export class Server {
     constructor() {
         this.app  = express();
-        this.port = env.PORT;
+        this.port = process.env.PORT || env.PORT;
 
         this.middlewares();
         this.routes();
