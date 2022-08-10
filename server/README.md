@@ -7,7 +7,7 @@ Se realizó deploy de back-end en [Heroku](https://shrouded-cove-81904.herokuapp
 
 Este proyecto se creó con [ESLint](https://eslint.org/) para el desarrollo del código.
 
-#####Se intentó evitar el uso de dependencias prescindibles.
+#### Se intentó evitar el uso de dependencias prescindibles.
 
 ## Uso
 Para realizar pruebas en desarrollo, se recomienda inicar primero el servidor de forma local y luego iniciar la aplicacion de frontend para realizar el consumo de esta API.

@@ -8,7 +8,7 @@ Se realizó deploy de front-end en [Netlify](https://meli-bruno.netlify.app/) en
 
 Este proyecto se creó con [ESLint](https://eslint.org/) para el desarrollo del código y [Sass](https://eslint.org/) para las hojas de estilo.
 
-#####Se intentó evitar el uso de dependencias prescindibles.
+#### Se intentó evitar el uso de dependencias prescindibles.
 
 ## Uso
 Para realizar pruebas en desarrollo, se recomienda inicar primero el servidor de forma local y luego iniciar esta aplicacion para realizar el consumo de dicha API.
