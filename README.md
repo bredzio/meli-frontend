@@ -17,9 +17,9 @@
 
 ## Documentación detallada de cada app:
 
-* [Cliente](https://github.com/)
+* [Cliente](https://github.com/bredzio/meli-frontend/blob/main/client/README.md)
 
-* [Servidor](https://github.com/)
+* [Servidor](https://github.com/bredzio/meli-frontend/blob/main/server/README.md)
 
 
 ## Desafío:
